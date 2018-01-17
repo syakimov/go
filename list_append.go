@@ -1,6 +1,7 @@
 package main
 
 // Lists does not have contains
+// List Tricks: https://github.com/golang/go/wiki/SliceTricks
 import "fmt"
 
 func main() {
