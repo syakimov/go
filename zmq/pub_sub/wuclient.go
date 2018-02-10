@@ -30,17 +30,17 @@ func main() {
 	subscriber.SetSubscribe(filter)
 
 	//  Process 100 updates
-	total_temp := 0
-	update_nbr := 0
-	for update_nbr < 100 {
+	totalTemp := 0
+	updateNbr := 0
+	for updateNbr < 100 {
 		msg, _ := subscriber.Recv(0)
 
 		if msgs := strings.Fields(msg); len(msgs) > 1 {
 			if temperature, err := strconv.Atoi(msgs[1]); err == nil {
-				total_temp += temperature
-				update_nbr++
+				totalTemp += temperature
+				updateNbr++
 			}
 		}
 	}
-	fmt.Printf("Average temperature for zipcode '%s' was %dF \n\n", strings.TrimSpace(filter), total_temp/update_nbr)
+	fmt.Printf("Average temperature for zipcode '%s' was %dF \n\n", strings.TrimSpace(filter), totalTemp/updateNbr)
 }
