@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	zmq "github.com/pebbe/zmq3"
 	"time"
+
+	zmq "github.com/pebbe/zmq3"
 )
 
 func main() {
