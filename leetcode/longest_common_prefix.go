@@ -3,12 +3,14 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
 
 func main() {
 	fmt.Println(longestCommonPrefix([]string{"124", "12"}))
-	// get runtime index out of range exception
 	fmt.Println(longestCommonPrefix([]string{"aa", "a"}))
+	fmt.Println(longestCommonPrefix([]string{"a", "a"}))
+	fmt.Println(longestCommonPrefix([]string{"a", "b"}))
 }
 
 func longestCommonPrefix(strs []string) string {
@@ -16,16 +18,16 @@ func longestCommonPrefix(strs []string) string {
 		return ""
 	}
 
-	var i int
-	for i = 0; i < len(strs[0]); i++ {
-		c := strs[0][0]
+	prefix := strs[0]
 
-		for k := 0; k < len(strs); k++ {
-			if i > len(strs[k]) || c != strs[k][i] {
-				return string(strs[0][:i+1])
+	for i := 1; i < len(strs); i++ {
+		for !strings.HasPrefix(strs[i], prefix) {
+			prefix = prefix[0 : len(prefix)-1]
+			if prefix == "" {
+				return ""
 			}
 		}
 	}
 
-	return string(strs[0][:i])
+	return prefix
 }
