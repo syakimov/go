@@ -15,4 +15,5 @@ $ go get -d -t -v # download dependencies (verbose, including test deps)
 $ go test
 $ go build
 $ go install
+$ go test ./... -cover # recursive coverage
 ```
