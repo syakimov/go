@@ -1,20 +1,17 @@
 // https://leetcode.com/problems/two-sum/description/
-package main
 
-import (
-	"fmt"
-)
+package twosum
 
-func main() {
-	// expect [0 1]
-	fmt.Println(twoSum([]int{2, 7, 15, 11}, 9))
-	// expect [1 2]
-	fmt.Println(twoSum([]int{3, 2, 4}, 6))
-}
+// func main() {
+// // expect [0 1]
+// fmt.Println(twoSum([]int{2, 7, 15, 11}, 9))
+// // expect [1 2]
+// fmt.Println(twoSum([]int{3, 2, 4}, 6))
+// }
 
 // Complexity: n
 // Space: n
-func twoSum(nums []int, target int) []int {
+func twoSumPartOne(nums []int, target int) []int {
 	dict := make(map[int]int)
 
 	for k, v := range nums {
